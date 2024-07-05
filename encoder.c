@@ -20,11 +20,11 @@ void encoder_init(Encoder *enc){
 }
 
 void encoder_calcSpeed(Encoder *enc){
-    int sum = 0;    
+    float sum = 0;    
     for (int i = 0; i < ENCODER_BUFF_SIZE; i++)
          sum += enc->buff[i]; 
         
-    enc->speed = sum * ENCODER_INCREMENT_LENGTH_M;
+    enc->speed = sum * ENCODER_INCREMENT_LENGTH_M * (10.0 / ENCODER_BUFF_SIZE);
 }
 
 void encoder_update(Encoder *enc){

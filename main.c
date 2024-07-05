@@ -195,8 +195,10 @@ int main(void) {
             
             gyroStarted = true;            
             
-            if(!sleep)
-                controlPitch();
+            if(!sleep){
+                controlLinearAcc();
+                controlPitch();                
+            }
             
             imu_evalReady = false;
         }

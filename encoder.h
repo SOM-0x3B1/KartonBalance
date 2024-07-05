@@ -1,7 +1,7 @@
 #include <stdbool.h>
 
 
-#define ENCODER_BUFF_SIZE 5
+#define ENCODER_BUFF_SIZE 4
 #define ENCODER_INCREMENT_LENGTH_M 0.003927
 
 

@@ -8,6 +8,7 @@
 #define TIPPING_TRESHOLD 30 // give up control and suspend motors over this tilt angle
     
 
+extern volatile float targetSpeed;
 extern volatile float targetPitchAngle; // keep this angle to achieve balance
 
 extern volatile float Kp;          // (P)roportional Tuning Parameter
@@ -18,6 +19,11 @@ extern volatile float maxPID;      // the maximum value that can be output
 
 extern volatile float lastPitch;   // the last sensor value
 extern volatile float lastError;   // the last error value
+    
+    
+void controlPitch();
+
+void controlLinearAcc();
     
     
     

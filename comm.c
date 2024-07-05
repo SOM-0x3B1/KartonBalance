@@ -134,7 +134,7 @@ void UART_enum() {
                 // get specification
                 case CMD_PART_SPEC: {
                     if (cmdType == 'S'){
-                        if(ch == 'P' || ch == 'I' || ch == 'D' || ch == 'A') {
+                        if(ch == 'P' || ch == 'I' || ch == 'D' /*|| ch == 'A'*/) {
                             cmdSpec = ch;
                             currPart = CMD_PART_VALUE;
                         }
@@ -189,9 +189,9 @@ void UART_enum() {
                     case 'D':
                         Kd = (float)value;
                         break;
-                    case 'A':
+                    /*case 'A':
                         targetPitchAngle = (float)value / 10;
-                        break;
+                        break;*/
                 }
             } 
             // enable

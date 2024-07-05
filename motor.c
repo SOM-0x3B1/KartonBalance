@@ -28,11 +28,6 @@ volatile Direction motor_lastDirection;
 volatile float motor_LPercentage = 0, motor_RPercentage = 0; // PWM duty cicle percentage
 
 
-Encoder encoderL = (Encoder) {0, 0};
-Encoder encoderR = (Encoder) {0, 0};
-unsigned int lastEncoderEvalL = 0;
-unsigned int lastEncoderEvalR = 0;
-
 
 volatile bool encoderEvalReady = false;
 
