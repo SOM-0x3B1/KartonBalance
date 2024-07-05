@@ -66,42 +66,6 @@ void motor_setDirection(){
 }
 
 
-/// Calculate optimal motor speed
-void motor_evalSpeed(){
-    // Calculate error between target and current values
-	volatile float error = (targetPitchAngle /*+ antiDrift_offsetAngle*/) - compPitch;
-	iTerm += error * IMU_EVAL_INTERVAL;
-
-	// Calculate the derivative term
-	volatile float dTerm = (error - lastError) / IMU_EVAL_INTERVAL / 10;
-    
-	lastError = error;
-
-	// Multiply each term by its constant, and add it all up
-	volatile float result = (error * Kp) + (iTerm * Ki) + (dTerm * Kd);    
-    //result = fabsf(result);
-
-	// Limit PID value to maximum values
-	if (result > maxPID) 
-        result = maxPID;
-    else if (result < -maxPID)
-        result = -maxPID;
-    
-    motor_evalDirection(result);
-    
-    if(sendPID){
-        outP = error * Kp * 10;
-        outI = iTerm * Ki * 10;
-        outD = dTerm * Kd * 10;
-        outPID = result * 10;        
-    }
-    
-    result = fabsf(result);    
-    motor_LPercentage = result / maxPID;
-    motor_RPercentage = result / maxPID;
-}
-
-
 /// Set motor speed to 0
 void motor_resetPWM(){
     motor_LPercentage = 0;

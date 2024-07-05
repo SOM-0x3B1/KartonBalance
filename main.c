@@ -7,6 +7,7 @@
 #include "comm.h"
 #include "imu.h"
 #include "motor.h"
+#include "encoder.h"
 
 
 
@@ -32,14 +33,22 @@ CY_ISR(GyroSampleIT){
 }
 
 /// Encoder interrupt count
-CY_ISR(EncoderLeftIT){ encoderL.currCount++; }
-CY_ISR(EncoderRightIT){ encoderR.currCount++; }
+CY_ISR(EncoderLeftIT){
+    if(motor_newDirection == FORWARD)
+        encoderL.currCount++;
+    else
+        encoderL.currCount--;
+}
+CY_ISR(EncoderRightIT){
+    if(motor_newDirection == FORWARD)
+        encoderR.currCount++;
+    else
+        encoderR.currCount--;
+}
 /// Evaluate encoder interrupt count
 CY_ISR(EncoderEvalIT){    
-    encoderL.evalCount = encoderL.currCount;
-    encoderR.evalCount = encoderR.currCount;
-    encoderL.currCount = 0;
-    encoderR.currCount = 0;   
+    encoder_update(&encoderL);
+    encoder_update(&encoderR);
     encoderEvalReady = true;
     Timer_Motor_Encoder_Eval_STATUS;
 }
@@ -85,7 +94,7 @@ void init() {
     UART_Bluetooth_Start();
     UART_Bluetooth_PutString("\n\rCOM Port Open\n\r");
     
-    // init gyoscope
+    // init IMU
     I2C_GY87_Start();
     MPU6050_init();
 	MPU6050_initialize();
@@ -95,7 +104,7 @@ void init() {
     sprintf(outBuf, MPU6050_testConnection() ? "MPU6050 connection successful\n\r" : "MPU6050 connection failed\n\n\r");
     UART_dual_PutString(true);
     
-    // calibrate gyro offsets
+    // calibrate IMU offsets
     sprintf(outBuf, "Calbirating...\n\r");
     UART_dual_PutString(true);
     imu_calibrate(500);
@@ -109,6 +118,7 @@ void init() {
     Timer_GY87_Sample_Start(); 
     Timer_UART_Eval_Start();
     Timer_UART_Send_Start();
+    Timer_Motor_Encoder_Eval_Start();
     
     sprintf(outBuf, "Timers started\n\r");
     UART_dual_PutString(true);
@@ -117,6 +127,9 @@ void init() {
     Clock_Motor_PWM_Start();
     PWM_Motor_Start();
     motor_curr_input = motor_input_sleep;
+    
+    encoder_init(&encoderL);
+    encoder_init(&encoderR);
     
     sprintf(outBuf, "Motor control started\n\r");
     UART_dual_PutString(true);
@@ -137,7 +150,7 @@ void init() {
     isr_UART_Eval_StartEx(UARTEvalIT);
     isr_UART_Send_StartEx(UARTSendIT);
     
-    sprintf(outBuf, "Interrupts registered\n\n\r");
+    sprintf(outBuf, "Interrupts registered\nStarting...\n\n\r");
     UART_dual_PutString(true);
 }
 
@@ -183,7 +196,7 @@ int main(void) {
             gyroStarted = true;            
             
             if(!sleep)
-                motor_evalSpeed(); 
+                controlPitch();
             
             imu_evalReady = false;
         }
@@ -198,11 +211,11 @@ int main(void) {
                 lastCompPitch = compPitch;
                 lastCompRoll = compRoll;
             }
-            if(sendMotor && (encoderL.evalCount != lastEncoderEvalL || encoderR.evalCount != lastEncoderEvalR)){
-                sprintf(outBufSpeed, "MS %d %d\n\r", encoderL.evalCount, encoderR.evalCount); 
+            if(sendMotor && (encoderL.speed != lastEncoderSpeedL || encoderR.speed != lastEncoderSpeedR)){
+                sprintf(outBufSpeed, "MS %d %d\n\r", (int)(encoderL.speed*10000), (int)(encoderR.speed*10000)); 
                 strcat(outBuf, outBufSpeed);
-                lastEncoderEvalL = encoderL.evalCount;
-                lastEncoderEvalR = encoderR.evalCount;
+                lastEncoderSpeedL = encoderL.speed;
+                lastEncoderSpeedR = encoderR.speed;
             }
             if(sendPID && (outPID != lastOutPID || outP != lastOutP || outI != lastOutI || outD != lastOutD)){
                 sprintf(outBufPID, "PR %d %d %d %d\n\r",  outP, outI, outD, outPID);
@@ -230,7 +243,7 @@ int main(void) {
                 case MOTOR_BRAKE:
                     motor_curr_input = motor_input_sleep;
                     motor_resetPWM();
-                    if(encoderL.evalCount == 0 && encoderR.currCount == 0)
+                    if(encoderL.speed == 0 && encoderR.currCount == 0)
                         motor_sate = MOTOR_GO;
                     break;
                 case MOTOR_SLEEP:

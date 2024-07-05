@@ -35,7 +35,7 @@ extern volatile int lastOutPID;
 
 extern volatile bool sendData;
 
-#define BT_SPACING 1
+#define BT_SPACING 3
 extern volatile int BTspacer; // to make Bluetooth output less frequent
 
 extern volatile bool sendGyro;  // enable gyro out stream

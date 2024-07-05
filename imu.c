@@ -63,13 +63,13 @@ void imu_calibrate(int numberOfTests){
 
 
 /// calculate angles from evaluated IMU data
-void imu_calcAngles(int sc){
-    AX /= sc;
-    AY /= sc;
-    AZ /= sc;
-    GX /= sc;
-    GY /= sc;
-    GZ /= sc;
+void imu_calcAngles(int sampleCount){
+    AX /= sampleCount;
+    AY /= sampleCount;
+    AZ /= sampleCount;
+    GX /= sampleCount;
+    GY /= sampleCount;
+    GZ /= sampleCount;
 
     AX = ((float)CAX - AXoff) / 16384.00;
     AY = ((float)CAY - AYoff) / 16384.00;

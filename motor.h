@@ -37,30 +37,12 @@ extern volatile Direction motor_lastDirection;
 extern volatile float motor_LPercentage, motor_RPercentage; // PWM duty cicle percentage
 
 
-typedef struct Encoder{
-    unsigned int currCount; // current interrupt count
-    unsigned int evalCount; // evaluated interrupt count
-} Encoder;
-
-extern Encoder encoderL;
-extern Encoder encoderR;
-extern unsigned int lastEncoderEvalL;
-extern unsigned int lastEncoderEvalR;
-
-extern volatile bool encoderEvalReady;
-
-
 
 /// Get direction according to the current pitch
 void motor_evalDirection(float PIDres);
 
 /// Set direction on the motor controller
 void motor_setDirection();
-
-
-/// Calculate optimal motor speed
-void motor_evalSpeed();
-
 
 /// Set motor speed to 0
 void motor_resetPWM();
