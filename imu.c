@@ -27,7 +27,7 @@ volatile double GX = 0, GY = 0, GZ = 0;          // averaged gyroscope values
 volatile int sampleCount = 0;                    // number of successfully collected samples
 volatile double accPitch = 0, accRoll = 0;       // angles calculated exclusively from the accelerometer
 volatile double compRoll = 0, compPitch = 0;     // anlges calculated by the complementary filter (gyro + acc)
-volatile double lastCompRoll = 0, lastCompPitch = 0; 
+volatile int lastDecCompRoll = 0, lastDecCompPitch = 0; 
 
 
 /// calibrate IMU offsets

@@ -16,9 +16,13 @@ extern volatile float Ki;          // (I)ntegral Tuning Parameter
 extern volatile float Kd;          // (D)erivative Tuning Parameter       
 extern volatile float iTerm;       // used to accumulate error (integral)
 extern volatile float maxPID;      // the maximum value that can be output
+    
+extern volatile float tau;
+    
 
 extern volatile float lastPitch;   // the last sensor value
-extern volatile float lastError;   // the last error value
+extern volatile float lastError;   // the last error value   
+extern volatile int lastDecTargetAngle;
     
     
 void controlPitch();

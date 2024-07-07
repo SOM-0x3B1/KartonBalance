@@ -5,8 +5,8 @@
 
 Encoder encoderL;
 Encoder encoderR;
-unsigned int lastEncoderSpeedL = 0;
-unsigned int lastEncoderSpeedR = 0;
+unsigned int lastDecEncoderSpeedL = 0;
+unsigned int lastDecEncoderSpeedR = 0;
 
 
 void encoder_add(int a);
@@ -17,6 +17,14 @@ void encoder_init(Encoder *enc){
     enc->speed = 0;
     enc->currCount = 0;  
     enc->currIndex = 0;
+}
+
+void encoder_clear(Encoder *enc){   
+    for (int i = 0; i < ENCODER_BUFF_SIZE; i++)
+         enc->buff[i] = 0; 
+        
+    enc->currCount = 0;
+    enc->speed = 0;
 }
 
 void encoder_calcSpeed(Encoder *enc){

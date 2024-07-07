@@ -40,9 +40,9 @@ CY_ISR(EncoderLeftIT){
         encoderL.currCount--;
 }
 CY_ISR(EncoderRightIT){
-    if(motor_newDirection == FORWARD)
+    if(motor_newDirection == FORWARD && motor_sate == MOTOR_GO)
         encoderR.currCount++;
-    else
+    else if (motor_sate == MOTOR_GO)
         encoderR.currCount--;
 }
 /// Evaluate encoder interrupt count
@@ -59,6 +59,11 @@ CY_ISR(ToggleSleepIT){
     sleep = !sleep;    
     motor_sate = sleep ? MOTOR_SLEEP : MOTOR_GO;
     updateLED();
+    if(!sleep){
+        encoder_clear(&encoderL);
+        encoder_clear(&encoderR);
+        iTerm = 0;
+    }
 }
 
 /// Read UART data
@@ -206,19 +211,26 @@ int main(void) {
         
         // ready to send UART output
         if(sendData){
-            outBuf[0] = '\0';
-            if(sendGyro && (compPitch != lastCompPitch || compRoll != lastCompRoll)){               
-                sprintf(outBufAngles, "GA %d %d\n\r",  (int)(compPitch*100), (int)(compRoll*100));
+            outBuf[0] = '\0';   
+            int decCompPitch = compPitch*100;
+            int decCompRoll = compRoll*100;
+            int decTargetAngle = targetPitchAngle*100;
+            if(sendGyro && (decCompPitch != lastDecCompPitch || decCompRoll != lastDecCompRoll || decTargetAngle != lastDecTargetAngle)){   
+                sprintf(outBufAngles, "GA %d %d %d\n\r",  decCompPitch, decCompRoll, decTargetAngle);
                 strcat(outBuf, outBufAngles);
-                lastCompPitch = compPitch;
-                lastCompRoll = compRoll;
+                lastDecCompPitch = decCompPitch;
+                lastDecCompRoll = decCompRoll;
             }
-            if(sendMotor && (encoderL.speed != lastEncoderSpeedL || encoderR.speed != lastEncoderSpeedR)){
-                sprintf(outBufSpeed, "MS %d %d\n\r", (int)(encoderL.speed*10000), (int)(encoderR.speed*10000)); 
+            
+            int decLSpeed = encoderL.speed * 10000;
+            int decRSpeed = encoderR.speed * 10000;
+            if(sendMotor && (encoderL.speed != lastDecEncoderSpeedL || encoderR.speed != lastDecEncoderSpeedR)){
+                sprintf(outBufSpeed, "MS %d %d\n\r", decLSpeed, decRSpeed); 
                 strcat(outBuf, outBufSpeed);
-                lastEncoderSpeedL = encoderL.speed;
-                lastEncoderSpeedR = encoderR.speed;
+                lastDecEncoderSpeedL = decLSpeed;
+                lastDecEncoderSpeedR = decRSpeed;
             }
+            
             if(sendPID && (outPID != lastOutPID || outP != lastOutP || outI != lastOutI || outD != lastOutD)){
                 sprintf(outBufPID, "PR %d %d %d %d\n\r",  outP, outI, outD, outPID);
                 strcat(outBuf, outBufPID);
@@ -245,8 +257,11 @@ int main(void) {
                 case MOTOR_BRAKE:
                     motor_curr_input = motor_input_sleep;
                     motor_resetPWM();
-                    if(encoderL.speed == 0 && encoderR.currCount == 0)
-                        motor_sate = MOTOR_GO;
+                    if(encoderL.currCount == 0 && encoderR.currCount == 0){
+                        motor_sate = MOTOR_GO;       
+                        encoder_clear(&encoderL);
+                        encoder_clear(&encoderR);
+                    }
                     break;
                 case MOTOR_SLEEP:
                     motor_curr_input = motor_input_sleep;

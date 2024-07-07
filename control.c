@@ -6,22 +6,24 @@
 #include "encoder.h"
 
 
+const float g = 9.8067;
+
+
 volatile float targetSpeed = 0;
 volatile float targetPitchAngle = 0; // keep this angle to achieve balance
 
 volatile float Kp = 500;          // (P)roportional Tuning Parameter
-volatile float Ki = 800;          // (I)ntegral Tuning Parameter        
+volatile float Ki = 600;          // (I)ntegral Tuning Parameter        
 volatile float Kd = 160;          // (D)erivative Tuning Parameter       
-volatile float iTerm = 0;         // used to accumulate error (integral)
 volatile float maxPID = 1024;     // the maximum value that can be output
+
+volatile float tau = 0.001;
 
 volatile float lastPitch = 0;     // the last sensor value
 volatile float lastError = 0;     // the last error value
+volatile int lastDecTargetAngle = 0;
 
-const float g = 9.8067;
-
-volatile float tau = 0.005;
-
+volatile float iTerm = 0;         // used to accumulate error (integral)
 
 
 /// Calculate optimal motor speed
@@ -67,4 +69,8 @@ float controlLinearVelocity_getA(){
 
 void controlLinearAcc(){
     targetPitchAngle = atanf(controlLinearVelocity_getA() / g);
+    if(targetPitchAngle > 5)
+        targetPitchAngle = 5;
+    else if (targetPitchAngle < -5)
+        targetPitchAngle = -5;
 }

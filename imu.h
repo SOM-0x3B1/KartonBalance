@@ -24,7 +24,7 @@ extern volatile double GX, GY, GZ;          // averaged gyroscope values
 extern volatile int sampleCount;            // number of successfully collected samples
 extern volatile double accPitch, accRoll;   // angles calculated exclusively from the accelerometer
 extern volatile double compRoll, compPitch; // anlges calculated by the complementary filter (gyro + acc)
-extern volatile double lastCompRoll, lastCompPitch; // last orientation values
+extern volatile int lastDecCompRoll, lastDecCompPitch; // last orientation values
 
 
 /// calibrate IMU offsets
