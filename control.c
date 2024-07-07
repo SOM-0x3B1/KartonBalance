@@ -17,7 +17,7 @@ volatile float Ki = 600;          // (I)ntegral Tuning Parameter
 volatile float Kd = 160;          // (D)erivative Tuning Parameter       
 volatile float maxPID = 1024;     // the maximum value that can be output
 
-volatile float tau = 0.001;
+volatile float tau = 0.002;
 
 volatile float lastPitch = 0;     // the last sensor value
 volatile float lastError = 0;     // the last error value

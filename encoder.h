@@ -2,7 +2,7 @@
 
 
 #define ENCODER_BUFF_SIZE 5
-#define ENCODER_INCREMENT_LENGTH_M 0.003927
+#define ENCODER_INCREMENT_LENGTH_M 0.01021
 
 
 typedef struct Encoder{
