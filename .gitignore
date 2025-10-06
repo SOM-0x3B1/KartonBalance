@@ -57,9 +57,9 @@ documentation/circuit-design-v02.png
 /Generated_Source
 /Export
 BUILD.log
-JagerKellner.rpt
-JagerKellner.cycdx
-JagerKellner.cyfit
-JagerKellner.svd
-JagerKellner_timing.html
+KartonBalance_timing.rpt
+KartonBalance_timing.cycdx
+KartonBalance_timing.cyfit
+KartonBalance_timing.svd
+KartonBalance_timing.html
 REBUILD.log

@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CyXmlSerializer>
+<!--This file is machine generated and read. It is not intended to be edited by hand.-->
+<!--Due to this, there is no schema for this file.-->
+<CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtWrkspcCustomData" version="4">
+<CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997 type_name="CyDesigner.Common.Base.CyCustomData" version="2">
+<userData>
+<dataGuid v="5f2be1a5-0687-4501-bb8c-cf21cb8211bf">
+<CyGuid_5f2be1a5-0687-4501-bb8c-cf21cb8211bf type_name="CyDesigner.Common.ProjMgmt.GUI.CyBookmarkData" version="1">
+<indicators />
+</CyGuid_5f2be1a5-0687-4501-bb8c-cf21cb8211bf>
+</dataGuid>
+<dataGuid v="1b906a0f-a7b6-4e4d-a428-82f98b53cb35">
+<CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35 type_name="CyDesigner.Common.ProjMgmt.GUI.CyExplorerWindow+CyExplorerWindowState" version="3" SelectedTab="Source">
+<TreeKeys>
+<v>Source</v>
+<v>Components</v>
+<v>Output</v>
+</TreeKeys>
+<TreeStates>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>KartonBalance-000</v>
+<v>KartonBalance-000\KartonBalance</v>
+<v>KartonBalance-000\KartonBalance\TopDesign</v>
+<v>KartonBalance-000\KartonBalance\KartonBalance.cydwr</v>
+<v>KartonBalance-000\KartonBalance\KartonBalance.cydwr\Pins</v>
+<v>KartonBalance-000\KartonBalance\KartonBalance.cydwr\Analog</v>
+<v>KartonBalance-000\KartonBalance\KartonBalance.cydwr\Clocks</v>
+<v>KartonBalance-000\KartonBalance\KartonBalance.cydwr\Interrupts</v>
+<v>KartonBalance-000\KartonBalance\KartonBalance.cydwr\DMA</v>
+<v>KartonBalance-000\KartonBalance\KartonBalance.cydwr\System</v>
+<v>KartonBalance-000\KartonBalance\KartonBalance.cydwr\Directives</v>
+<v>KartonBalance-000\KartonBalance\KartonBalance.cydwr\Flash Security</v>
+<v>KartonBalance-000\KartonBalance\KartonBalance.cydwr\EEPROM</v>
+<v>KartonBalance-000\KartonBalance\Header Files</v>
+<v>KartonBalance-000\KartonBalance\Header Files\comm.h</v>
+<v>KartonBalance-000\KartonBalance\Header Files\control.h</v>
+<v>KartonBalance-000\KartonBalance\Header Files\cyapicallbacks.h</v>
+<v>KartonBalance-000\KartonBalance\Header Files\encoder.h</v>
+<v>KartonBalance-000\KartonBalance\Header Files\imu.h</v>
+<v>KartonBalance-000\KartonBalance\Header Files\motor.h</v>
+<v>KartonBalance-000\KartonBalance\Header Files\mpu6050.h</v>
+<v>KartonBalance-000\KartonBalance\Source Files</v>
+<v>KartonBalance-000\KartonBalance\Source Files\comm.c</v>
+<v>KartonBalance-000\KartonBalance\Source Files\control.c</v>
+<v>KartonBalance-000\KartonBalance\Source Files\encoder.c</v>
+<v>KartonBalance-000\KartonBalance\Source Files\i2cFunctions.c</v>
+<v>KartonBalance-000\KartonBalance\Source Files\imu.c</v>
+<v>KartonBalance-000\KartonBalance\Source Files\main.c</v>
+<v>KartonBalance-000\KartonBalance\Source Files\motor.c</v>
+<v>KartonBalance-000\KartonBalance\Source Files\mpu6050.c</v>
+<v>KartonBalance-000\KartonBalance\Generated_Source</v>
+<v>KartonBalance-000\KartonBalance\Generated_Source\PSoC5</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>KartonBalance-000</v>
+<v>KartonBalance-000\KartonBalance</v>
+<v>KartonBalance-000\KartonBalance\TopDesign</v>
+<v>KartonBalance-000\KartonBalance\KartonBalance.cydwr</v>
+<v>KartonBalance-000\KartonBalance\KartonBalance.cydwr\Pins</v>
+<v>KartonBalance-000\KartonBalance\KartonBalance.cydwr\Analog</v>
+<v>KartonBalance-000\KartonBalance\KartonBalance.cydwr\Clocks</v>
+<v>KartonBalance-000\KartonBalance\KartonBalance.cydwr\Interrupts</v>
+<v>KartonBalance-000\KartonBalance\KartonBalance.cydwr\DMA</v>
+<v>KartonBalance-000\KartonBalance\KartonBalance.cydwr\System</v>
+<v>KartonBalance-000\KartonBalance\KartonBalance.cydwr\Directives</v>
+<v>KartonBalance-000\KartonBalance\KartonBalance.cydwr\Flash Security</v>
+<v>KartonBalance-000\KartonBalance\KartonBalance.cydwr\EEPROM</v>
+<v>KartonBalance-000\KartonBalance\Header Files</v>
+<v>KartonBalance-000\KartonBalance\Header Files\comm.h</v>
+<v>KartonBalance-000\KartonBalance\Header Files\control.h</v>
+<v>KartonBalance-000\KartonBalance\Header Files\cyapicallbacks.h</v>
+<v>KartonBalance-000\KartonBalance\Header Files\encoder.h</v>
+<v>KartonBalance-000\KartonBalance\Header Files\imu.h</v>
+<v>KartonBalance-000\KartonBalance\Header Files\motor.h</v>
+<v>KartonBalance-000\KartonBalance\Header Files\mpu6050.h</v>
+<v>KartonBalance-000\KartonBalance\Source Files</v>
+<v>KartonBalance-000\KartonBalance\Source Files\comm.c</v>
+<v>KartonBalance-000\KartonBalance\Source Files\control.c</v>
+<v>KartonBalance-000\KartonBalance\Source Files\encoder.c</v>
+<v>KartonBalance-000\KartonBalance\Source Files\i2cFunctions.c</v>
+<v>KartonBalance-000\KartonBalance\Source Files\imu.c</v>
+<v>KartonBalance-000\KartonBalance\Source Files\main.c</v>
+<v>KartonBalance-000\KartonBalance\Source Files\motor.c</v>
+<v>KartonBalance-000\KartonBalance\Source Files\mpu6050.c</v>
+<v>KartonBalance-000\KartonBalance\Generated_Source</v>
+<v>KartonBalance-000\KartonBalance\Generated_Source\PSoC5</v>
+<v>KartonBalance-000\KartonBalance\Generated_Source\PSoC5\Clock_LED_PWM</v>
+<v>KartonBalance-000\KartonBalance\Generated_Source\PSoC5\Clock_Motor_PWM</v>
+<v>KartonBalance-000\KartonBalance\Generated_Source\PSoC5\Clock_Timer_G87_Sample</v>
+<v>KartonBalance-000\KartonBalance\Generated_Source\PSoC5\Clock_Timer_Motor_Encoder_Eval</v>
+<v>KartonBalance-000\KartonBalance\Generated_Source\PSoC5\Clock_Timer_UART</v>
+<v>KartonBalance-000\KartonBalance\Generated_Source\PSoC5\cy_boot</v>
+<v>KartonBalance-000\KartonBalance\Generated_Source\PSoC5\Em_EEPROM_Dynamic</v>
+<v>KartonBalance-000\KartonBalance\Generated_Source\PSoC5\I2C_GY87</v>
+<v>KartonBalance-000\KartonBalance\Generated_Source\PSoC5\isr_Eval_Motor_Encoder</v>
+<v>KartonBalance-000\KartonBalance\Generated_Source\PSoC5\isr_Inc_Motor_Encoder_L</v>
+<v>KartonBalance-000\KartonBalance\Generated_Source\PSoC5\isr_Inc_Motor_Encoder_R</v>
+<v>KartonBalance-000\KartonBalance\Generated_Source\PSoC5\isr_Sample_GY87</v>
+<v>KartonBalance-000\KartonBalance\Generated_Source\PSoC5\isr_Toggle_Sleep</v>
+<v>KartonBalance-000\KartonBalance\Generated_Source\PSoC5\isr_UART_Eval</v>
+<v>KartonBalance-000\KartonBalance\Generated_Source\PSoC5\isr_UART_Send</v>
+<v>KartonBalance-000\KartonBalance\Generated_Source\PSoC5\Pin_DRDY</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>KartonBalance-000</v>
+<v>KartonBalance-000\KartonBalance</v>
+<v>KartonBalance-000\KartonBalance\TopDesign</v>
+<v>KartonBalance-000\KartonBalance\TopDesign\TopDesign.cysch</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>KartonBalance-000</v>
+<v>KartonBalance-000\KartonBalance</v>
+<v>KartonBalance-000\KartonBalance\TopDesign</v>
+<v>KartonBalance-000\KartonBalance\TopDesign\TopDesign.cysch</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>KartonBalance-000</v>
+<v>KartonBalance-000\KartonBalance</v>
+<v>KartonBalance-000\KartonBalance\CortexM3</v>
+<v>KartonBalance-000\KartonBalance\CortexM3\ARM_GCC_541</v>
+<v>KartonBalance-000\KartonBalance\CortexM3\ARM_GCC_541\Debug</v>
+<v>KartonBalance-000\KartonBalance\CortexM3\ARM_GCC_541\Debug\KartonBalance.elf</v>
+<v>KartonBalance-000\KartonBalance\CortexM3\ARM_GCC_541\Debug\KartonBalance.hex</v>
+<v>KartonBalance-000\KartonBalance\CortexM3\ARM_GCC_541\Debug\KartonBalance.map</v>
+<v>KartonBalance-000\KartonBalance\KartonBalance.gpdsc</v>
+<v>KartonBalance-000\KartonBalance\KartonBalance.rpt</v>
+<v>KartonBalance-000\KartonBalance\KartonBalance_timing.html</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>KartonBalance-000</v>
+<v>KartonBalance-000\KartonBalance</v>
+<v>KartonBalance-000\KartonBalance\CortexM3</v>
+<v>KartonBalance-000\KartonBalance\CortexM3\ARM_GCC_541</v>
+<v>KartonBalance-000\KartonBalance\CortexM3\ARM_GCC_541\Debug</v>
+<v>KartonBalance-000\KartonBalance\CortexM3\ARM_GCC_541\Debug\KartonBalance.elf</v>
+<v>KartonBalance-000\KartonBalance\CortexM3\ARM_GCC_541\Debug\KartonBalance.hex</v>
+<v>KartonBalance-000\KartonBalance\CortexM3\ARM_GCC_541\Debug\KartonBalance.map</v>
+<v>KartonBalance-000\KartonBalance\KartonBalance.gpdsc</v>
+<v>KartonBalance-000\KartonBalance\KartonBalance.rpt</v>
+<v>KartonBalance-000\KartonBalance\KartonBalance_timing.html</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStates>
+<TreeKeysV2>
+<v>Datasheet</v>
+</TreeKeysV2>
+<TreeStatesV2>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>KartonBalance-000</v>
+<v>KartonBalance-000\KartonBalance</v>
+<v>KartonBalance-000\KartonBalance\PSoC 5LP Architecture TRM</v>
+<v>KartonBalance-000\KartonBalance\CY8C58LP Family Datasheet</v>
+<v>KartonBalance-000\KartonBalance\System Reference Guides</v>
+<v>KartonBalance-000\KartonBalance\cy_clock_v2_20</v>
+<v>KartonBalance-000\KartonBalance\cy_clock_v2_20\cy_clock_v2_20.pdf</v>
+<v>KartonBalance-000\KartonBalance\cy_constant_v1_0</v>
+<v>KartonBalance-000\KartonBalance\cy_constant_v1_0\cy_constant_v1_0.pdf</v>
+<v>KartonBalance-000\KartonBalance\cy_pins_v2_20</v>
+<v>KartonBalance-000\KartonBalance\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>KartonBalance-000\KartonBalance\I2C_v3_50.pdf</v>
+<v>KartonBalance-000\KartonBalance\not_v1_0</v>
+<v>KartonBalance-000\KartonBalance\not_v1_0\not_v1_0.pdf</v>
+<v>KartonBalance-000\KartonBalance\PWM_v3_30</v>
+<v>KartonBalance-000\KartonBalance\PWM_v3_30\PWM_v3_30.pdf</v>
+<v>KartonBalance-000\KartonBalance\Timer_v2_80</v>
+<v>KartonBalance-000\KartonBalance\Timer_v2_80\Timer_v2_80.pdf</v>
+<v>KartonBalance-000\KartonBalance\UART_v2_50</v>
+<v>KartonBalance-000\KartonBalance\UART_v2_50\UART_v2_50.pdf</v>
+<v>KartonBalance-000\KartonBalance\ZeroTerminal</v>
+<v>KartonBalance-000\KartonBalance\ZeroTerminal\ZeroTerminal.pdf</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>KartonBalance-000</v>
+<v>KartonBalance-000\KartonBalance</v>
+<v>KartonBalance-000\KartonBalance\PSoC 5LP Architecture TRM</v>
+<v>KartonBalance-000\KartonBalance\CY8C58LP Family Datasheet</v>
+<v>KartonBalance-000\KartonBalance\System Reference Guides</v>
+<v>KartonBalance-000\KartonBalance\cy_clock_v2_20</v>
+<v>KartonBalance-000\KartonBalance\cy_clock_v2_20\cy_clock_v2_20.pdf</v>
+<v>KartonBalance-000\KartonBalance\cy_constant_v1_0</v>
+<v>KartonBalance-000\KartonBalance\cy_constant_v1_0\cy_constant_v1_0.pdf</v>
+<v>KartonBalance-000\KartonBalance\cy_pins_v2_20</v>
+<v>KartonBalance-000\KartonBalance\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>KartonBalance-000\KartonBalance\I2C_v3_50.pdf</v>
+<v>KartonBalance-000\KartonBalance\not_v1_0</v>
+<v>KartonBalance-000\KartonBalance\not_v1_0\not_v1_0.pdf</v>
+<v>KartonBalance-000\KartonBalance\PWM_v3_30</v>
+<v>KartonBalance-000\KartonBalance\PWM_v3_30\PWM_v3_30.pdf</v>
+<v>KartonBalance-000\KartonBalance\Timer_v2_80</v>
+<v>KartonBalance-000\KartonBalance\Timer_v2_80\Timer_v2_80.pdf</v>
+<v>KartonBalance-000\KartonBalance\UART_v2_50</v>
+<v>KartonBalance-000\KartonBalance\UART_v2_50\UART_v2_50.pdf</v>
+<v>KartonBalance-000\KartonBalance\ZeroTerminal</v>
+<v>KartonBalance-000\KartonBalance\ZeroTerminal\ZeroTerminal.pdf</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStatesV2>
+</CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35>
+</dataGuid>
+</userData>
+</CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
+<Unloaded />
+<OpenDocs />
+<OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
+
+  Actipro Docking/MDI for WinForms
+  Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
+  http://www.actiprosoftware.com
+
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1693, 635" SelectedTabbedMdiWindow="74df65f0-41fc-4c5d-8650-0f5f9225f054"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="74df65f0-41fc-4c5d-8650-0f5f9225f054" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+<config v="" />
+<AutoUpdate v="true" />
+</CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
+</CyXmlSerializer>
